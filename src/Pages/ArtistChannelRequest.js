@@ -1,0 +1,40 @@
+import React, { useState } from 'react'
+import InputField from '../Component/InputField/InputField'
+import ArtistChannelRequestTable from '../Component/Table/ArtistChannelRequestTable';
+import PrimaryBtn from '../Component/Button/PrimaryBtn';
+
+function ArtistchannelRequest() {
+  const [name, setName] = useState('');
+  
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  return (
+    <div>
+      <div className="yt-ex-bg">
+      <div className="section_title">
+        <div className="text_area">
+          <h2>Artist Channel Request</h2>
+        </div>
+      </div>
+      <div className='row'>
+        <div className="col-lg-6 col-md-12">
+        <InputField label="Channel Link" value={name} star="*" onChange={handleNameChange} />
+        <InputField label="Topic Link" value={name} star="*" onChange={handleNameChange} />
+        <InputField label="UPC1" value={name} star="*" onChange={handleNameChange} />
+        <InputField label="UPC2" value={name} star="*" onChange={handleNameChange} />
+        <InputField label="UPC3" value={name} star="*" onChange={handleNameChange} />
+        <div className='mt-4'><PrimaryBtn label="Submit"/></div>
+        </div>
+      </div>
+      </div>
+      <div className="table_content">
+        <h2 className='mb-5'>All History</h2>
+        <ArtistChannelRequestTable />
+      </div>
+    </div>
+  )
+}
+
+export default ArtistchannelRequest
